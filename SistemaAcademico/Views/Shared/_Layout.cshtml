@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SistemaAcademico</title>
+    <title>@ViewData["Title"] - Sistema Académico..</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -31,6 +31,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Categorias" asp-action="Index">Categoria Cursos</a></li>
+                    <li><a asp-area="" asp-controller="Cursos" asp-action="Index">Cursos</a></li>
+                    <li><a asp-area="" asp-controller="Estudiantes" asp-action="Index">Estudiantes</a></li>
+                    <li><a asp-area="" asp-controller="Instructores" asp-action="Index">Instructores</a></li>
+                    <li><a asp-area="" asp-controller="Asignaciones" asp-action="Index">Asignaciones</a></li>
+                    <li><a asp-area="" asp-controller="Matriculas" asp-action="Index">Matriculas</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
@@ -41,7 +47,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - SistemaAcademico</p>
+            <p>&copy; 2018 - Sistema Académico By Emilio Barrera sepúlveda - London.</p>
         </footer>
     </div>
 
