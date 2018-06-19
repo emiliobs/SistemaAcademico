@@ -19,12 +19,20 @@ namespace SistemaAcademico.Controllers
         }
 
         // GET: Categorias
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
             ViewData["Nombresortparm"] = string.IsNullOrEmpty(sortOrder) ? "nombre_desc" : "";
             ViewData["DescripcionSortParam"] = sortOrder == "descripcion_asc" ? "descripcion_desc" : "descripcion_asc";
+            ViewData["CurrentFilter"] = searchString;
 
             var categorias = from s in _context.Categoria select s;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                categorias = categorias.Where(s => s.Nombre.ToUpper().Contains(searchString) ||
+                                              s.Descripcion.ToUpper().Contains(searchString));
+            }
+
 
             switch(sortOrder)
             {
